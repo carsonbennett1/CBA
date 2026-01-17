@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import { connectDB } from "./config/db.js";
 import Book from "./models/book.model.js";
+import mongoose from "mongoose";
 
 dotenv.config();
 
@@ -42,6 +43,22 @@ app.delete("/api/books/:id", async (req, res) => {
         res.status(200).json({success: true, message: "Book deleted"});
     } catch (error) {
         res.status(404).json({success: false, message: "Book not found"});
+    }
+});
+
+app.put("/api/books/:id", async (req, res) => {
+    const { id } = req.params;
+    const book = req.body;
+
+    if(!mongoose.Types.ObjectId.isValid(id)){
+        return res.status(404).json({success: false, message: "Invalid book ID "});
+    }
+
+    try {
+        const updatedBook = await Book.findByIdAndUpdate(id, book, {new:true});
+        res.status(200).json({success: true, data: updatedBook});
+    } catch (error) {
+        res.status(500).json({success: false, message:"Server Error" });
     }
 });
 
