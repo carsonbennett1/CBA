@@ -1,5 +1,6 @@
 import '../App.css'
 import { useState } from 'react'
+import { useBookArchive } from '../archive/book'
 
 const AddBook = () => {
     const [newBook, setNewBook ] = useState({
@@ -8,8 +9,9 @@ const AddBook = () => {
         image:"",
     })
 
-    const handleAddBook = () => {
-        console.log(newBook)
+    const {addNewBook} = useBookArchive()
+    const handleAddBook = async() => {
+        const {success, message} = await addNewBook(newBook)
     }
 
     return(
