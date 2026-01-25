@@ -16,5 +16,6 @@ export const useBookArchive = create((set) => ({
         })
         const data = await res.json()
         set((state) => ({books:{...state.books, data}}))
+        return {success:true, message:"Product created successfuly"}
     }
 }))

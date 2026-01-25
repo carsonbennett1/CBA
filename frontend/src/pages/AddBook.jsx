@@ -9,9 +9,11 @@ const AddBook = () => {
         image:"",
     })
 
-    const {addNewBook} = useBookArchive()
+    const {addBook} = useBookArchive()
     const handleAddBook = async() => {
-        const {success, message} = await addNewBook(newBook)
+        const {success, message} = await addBook(newBook)
+        console.log("Success:", success)
+        console.log("Message:", message)
     }
 
     return(
