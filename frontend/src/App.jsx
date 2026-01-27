@@ -2,6 +2,7 @@ import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import AddBook from './pages/AddBook'
 import Home from './pages/HomePage'
+import { ToastContainer } from 'react-toastify'
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
             <Route path='/add' element={<AddBook />} />
           </Routes>
         </nav>
+        <div>
+          <ToastContainer position='top-right' />
+        </div>
       </main>
     </>
   )

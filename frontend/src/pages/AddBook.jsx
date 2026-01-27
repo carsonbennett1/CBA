@@ -1,6 +1,7 @@
 import '../App.css'
 import { useState } from 'react'
 import { useBookArchive } from '../archive/book'
+import { toast } from "react-toastify"
 
 const AddBook = () => {
     const [newBook, setNewBook ] = useState({
@@ -12,8 +13,24 @@ const AddBook = () => {
     const {addBook} = useBookArchive()
     const handleAddBook = async() => {
         const {success, message} = await addBook(newBook)
-        console.log("Success:", success)
-        console.log("Message:", message)
+        // console.log("Success:", success)
+        // console.log("Message:", message)
+        if(!success){
+            const notify = () => {
+                toast.error("Unsuccessful add book attempt", {
+                    autoClose: 3000,
+                });
+            }
+            notify();
+        }
+        if(success){
+            const accept = () => {
+                toast.success("Successfuly added book to archive.", {
+                    autoClose: 3000,
+                })
+            }
+            accept();
+        }
     }
 
     return(
