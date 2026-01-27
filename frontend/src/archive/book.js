@@ -10,12 +10,17 @@ export const useBookArchive = create((set) => ({
         const res = await fetch("/api/books", {
             method:"POST",
             headers:{
-                "Content-Type":"application/json"
+                "Content-Type":"application/json",
             },
-            body:JSON.stringify(newBook)
-        })
-        const data = await res.json()
-        set((state) => ({books:{...state.books, data}}))
-        return {success:true, message:"Product created successfuly"}
-    }
+            body:JSON.stringify(newBook),
+        });
+        const data = await res.json();
+        set((state) => ({books:{...state.books, data}}));
+        return {success:true, message:"Product created successfuly"};
+    },
+    fetchBooks: async () => {
+        const res = await fetch("/api/books");
+        const data = await res.json();
+        set({ books: data.data});
+    },
 }))
