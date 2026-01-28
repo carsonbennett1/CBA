@@ -8,6 +8,10 @@
     background-color: lightgrey;
 }
 
+.item img {
+    width: 80%;
+}
+
 h4, h5, p {
     text-align: left;
     margin-left: 0.5em;
