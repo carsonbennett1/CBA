@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import '../styles/HomePage.css'
 import { useBookArchive } from '../archive/book'
+import BookCard from './BookCard';
 
 const Home = () => {
     const {fetchBooks, books} = useBookArchive();
@@ -21,18 +22,9 @@ const Home = () => {
                         </section>
                     }
                 </script>
-                <section class="item">
-                    <p>Book 1</p>
-                </section>
-                <section class="item">
-                    <p>Book 2</p>
-                </section>
-                <section class="item">
-                    <p>Book 3</p>
-                </section>
-                <section class="item">
-                    <p>Book 4</p>
-                </section>
+                {books.map((book) => (
+                    <BookCard key={book._id} book={book} />
+                ))}
             </main>
         </>
     )
