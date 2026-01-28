@@ -14,7 +14,7 @@ const Home = () => {
     return (
         <>
             <main>
-                <h1>Welcome</h1>
+                <h1>Welcome to Carson's Book Archive</h1>
                 <script>
                     if(!books){
                         <section>

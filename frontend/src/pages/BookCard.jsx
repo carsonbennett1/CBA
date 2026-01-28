@@ -4,8 +4,8 @@ const BookCard = ({book}) => {
     return (
         <>
             <div class="item">
-                <h1>{book.name}</h1>
-                <h3>{book.pages}</h3>
+                <h3>{book.name}</h3>
+                <h5>Number of pages: {book.pages}</h5>
             </div>
         </>
     )

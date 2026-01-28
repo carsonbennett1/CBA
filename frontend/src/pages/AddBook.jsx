@@ -1,4 +1,3 @@
-import '../App.css'
 import { useState } from 'react'
 import { useBookArchive } from '../archive/book'
 import { toast } from "react-toastify"
@@ -13,8 +12,6 @@ const AddBook = () => {
     const {addBook} = useBookArchive()
     const handleAddBook = async() => {
         const {success, message} = await addBook(newBook)
-        // console.log("Success:", success)
-        // console.log("Message:", message)
         if(!success){
             const notify = () => {
                 toast.error("Unsuccessful add book attempt", {

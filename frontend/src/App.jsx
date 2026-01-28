@@ -1,4 +1,5 @@
 import './App.css'
+import './styles/HomePage.css'
 import { Route, Routes } from 'react-router-dom'
 import AddBook from './pages/AddBook'
 import Home from './pages/HomePage'
