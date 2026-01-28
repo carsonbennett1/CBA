@@ -2,6 +2,8 @@
     display: inline-block;
     justify-content: left;
     text-align: center;
-    border: solid 2px black;
+    border: solid 1px black;
     width: 33%;
+    margin: 0em 0em 0.5em 0em;
+    background-color: lightgrey;
 }

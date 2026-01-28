@@ -14,9 +14,13 @@ const Home = () => {
         <>
             <main>
                 <h1>Welcome</h1>
-                <section>
-                    <h3>No books currently on display. Add some <a href='/add'>here</a></h3>
-                </section>
+                <script>
+                    if(!books){
+                        <section>
+                            <h3>No books currently on display. Add some <a href='/add'>here</a></h3>
+                        </section>
+                    }
+                </script>
                 <section class="item">
                     <p>Book 1</p>
                 </section>
