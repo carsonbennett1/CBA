@@ -15,6 +15,17 @@ const Home = () => {
         <>
             <main>
                 <h1><u>Welcome to Carson's Book Archive</u></h1>
+
+                <aside id='home-aside'>
+                    <nav>
+                        <h2><a href='/add'>Add Books</a></h2>
+                        <h2>Update Books</h2>
+                        <h2>Delete Books</h2>
+                        <h2>More Infor on Author</h2>
+                        <h2>Essays of Interest</h2>
+                    </nav>
+                </aside>
+
                 <script>
                     if(!books){
                         <section>
