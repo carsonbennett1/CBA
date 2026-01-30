@@ -23,4 +23,14 @@ export const useBookArchive = create((set) => ({
         const data = await res.json();
         set({ books: data.data});
     },
+    deleteBook: async (bid) => {
+        const res = await fetch(`/api/books/${bid}`, {
+            method: "DELETE",
+        });
+        const data = await res.json();
+        if(!data.success) return { success: false, message: data.message };
+
+        set(state => ({ books: state.books.filter(book => book._id !== bid) }));
+        return { success: true, message: data.message };
+    }
 }))
