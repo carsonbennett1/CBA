@@ -12,16 +12,15 @@ const Home = () => {
     console.log("books:", books)
 
     return (
-        <>
+        <>  
+            <header>
+                <h1><u>Welcome to Carson's Book Archive</u></h1>
+                <nav class="main-nav">
+                    <a href='/add'>Add Book</a>
+                    <a href='/delete'>Delete Book</a>
+                </nav>
+            </header>
             <main>
-                <header>
-                    <h1><u>Welcome to Carson's Book Archive</u></h1>
-                    <nav class="main-nav">
-                        <a href='/add'>Add Book</a>
-                        <a href='/delete'>Delete Book</a>
-                    </nav>
-                </header>
-                
                 <section class="book-script">
                     <script>
                         if(!books){
