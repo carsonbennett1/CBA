@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useBookArchive } from '../archive/book'
 import { toast } from "react-toastify"
+import "../styles/AddBook.css"
 
 const AddBook = () => {
     const [newBook, setNewBook ] = useState({
@@ -41,36 +42,44 @@ const AddBook = () => {
                 </nav>
             </header>
             <main>
-                <label>Please add your book name:</label><br/>
-                <input
-                    placeholder='Book Name' 
-                    name='name' 
-                    value={newBook.name}
-                    onChange={(e) => setNewBook({ ...newBook, name: e.target.value})} 
-                />
-                <br/><br/>
-                <label>Number of pages:</label><br/>
-                <input
-                    placeholder='num. pages' 
-                    name='pages'
-                    type='number'
-                    value={newBook.pages}
-                    onChange={(e) => setNewBook({ ...newBook, pages: e.target.value})} 
-                />
-                <br/><br/>
-                <label>Image link:</label><br/>
-                <input
-                    placeholder='link' 
-                    name='image' 
-                    value={newBook.image}
-                    onChange={(e) => setNewBook({ ...newBook, image: e.target.value})} 
-                />
-                <br/><br/>
-                <button
-                    onClick={handleAddBook}
-                >
-                    Submit
-                </button>
+                <section class="add-book">
+                    <section class="add-name-details">
+                        <label>Please add your book name:</label><br/>
+                        <input
+                            placeholder='Book Name' 
+                            name='name' 
+                            value={newBook.name}
+                            onChange={(e) => setNewBook({ ...newBook, name: e.target.value})} 
+                        />
+                        <br/><br/>
+                    </section>
+                    <section class="add-page-details">
+                        <label>Number of pages:</label><br/>
+                        <input
+                            placeholder='num. pages' 
+                            name='pages'
+                            type='number'
+                            value={newBook.pages}
+                            onChange={(e) => setNewBook({ ...newBook, pages: e.target.value})} 
+                        />
+                        <br/><br/>
+                    </section>
+                    <section class="add-url-details">
+                        <label>Image link:</label><br/>
+                        <input
+                            placeholder='link' 
+                            name='image' 
+                            value={newBook.image}
+                            onChange={(e) => setNewBook({ ...newBook, image: e.target.value})} 
+                        />
+                        <br/><br/>
+                    </section>
+                    <button
+                        onClick={handleAddBook}
+                    >
+                        Submit
+                    </button>
+                </section>
             </main>
         </>
     )
