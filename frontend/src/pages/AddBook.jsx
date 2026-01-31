@@ -33,7 +33,12 @@ const AddBook = () => {
     return(
         <>
             <header>
-                <h1>This is the add book page</h1>
+                <h1><u>Welcome to Carson's Book Archive</u></h1>
+                <nav class="main-nav">
+                    <a href="/">Home</a>
+                    <a href='/add'>Add Book</a>
+                    <a href='/delete'>Delete Book</a>
+                </nav>
             </header>
             <main>
                 <label>Please add your book name:</label><br/>
