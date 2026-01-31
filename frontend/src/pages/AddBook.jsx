@@ -12,22 +12,34 @@ const AddBook = () => {
 
     const {addBook} = useBookArchive()
     const handleAddBook = async() => {
-        const {success, message} = await addBook(newBook)
-        if(!success){
+        
+        if(!newBook.name || !newBook.pages || !newBook.image){
             const notify = () => {
-                toast.error("Unsuccessful add book attempt", {
+                toast.error("Empty submission fields.", {
                     autoClose: 3000,
                 });
             }
             notify();
-        }
-        if(success){
-            const accept = () => {
-                toast.success("Successfuly added book to archive.", {
-                    autoClose: 3000,
-                })
+        
+        }else{
+            const {success} = await addBook(newBook)
+            if(!success){
+                const notify = () => {
+                    toast.error("Unsuccessful add book attempt", {
+                        autoClose: 3000,
+                    });
+                }
+                notify();
             }
-            accept();
+            
+            if(success){
+                const accept = () => {
+                    toast.success("Successfuly added book to archive.", {
+                        autoClose: 3000,
+                    })
+                }
+                accept();
+            }
         }
     }
 
