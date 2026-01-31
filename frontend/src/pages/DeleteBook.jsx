@@ -10,28 +10,36 @@ const DeleteBook = () => {
 
     const {deleteBook} = useBookArchive();
     const handleDeleteBook = async() => {
-
-        let deleteValidation = confirm("Are you sure you want to DELETE '" + bookToDelete.name + "'?")
-        if(deleteValidation){
-            const { success } = await deleteBook(bookToDelete.name)
-            if(!success){
-                const notify = () => {
-                    toast.error("Unsuccessful delete book attempt", {
-                        autoClose: 3000,
-                    });
-                }
-                notify();
+        if(!bookToDelete.name){
+            const notify = () => {
+                toast.error("Please enter a book name", {
+                    autoClose: 3000,
+                });
             }
-            
-            if(success){
-                const accept = () => {
-                    toast.success("Successfuly deleted book from archive.", {
-                        autoClose: 3000,
-                    })
+            notify();
+        }else{
+            let deleteValidation = confirm("Are you sure you want to DELETE '" + bookToDelete.name + "'?")
+            if(deleteValidation){
+                const { success } = await deleteBook(bookToDelete.name)
+                if(!success){
+                    const notify = () => {
+                        toast.error("Unsuccessful delete book attempt. Does it exist?", {
+                            autoClose: 3000,
+                        });
+                    }
+                    notify();
                 }
-                accept();
-            }
-        };
+                
+                if(success){
+                    const accept = () => {
+                        toast.success("Successfuly deleted book from archive.", {
+                            autoClose: 3000,
+                        })
+                    }
+                    accept();
+                }
+            };
+        }
     };
 
     return (
