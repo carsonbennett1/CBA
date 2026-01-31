@@ -3,7 +3,27 @@
     justify-content: center;
     flex-direction: row;
     margin-bottom: 20px;
-    border: 2px solid;
+    border: solid 2px black;
+    margin-top: -10px;
+    padding: 5px 0 5px 0;
+}
+
+.main-nav a {
+    margin: 0 10px 0px 10px;
+}
+
+.main-nav a:link {
+    color: blue;
+    text-decoration: none;
+}
+
+.main-nav a:visited {
+    color: blue;
+    text-decoration: none;
+}
+
+.main-nav a:hover {
+    background-color: darkblue;
 }
 
 #home-aside {
