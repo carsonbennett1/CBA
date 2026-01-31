@@ -30,17 +30,18 @@ export const createBook = async (req, res) => {
 };
 
 export const deleteBook = async (req, res) => {
-    const { id } = req.params;
+    const { name } = req.params;
+    let query = { name: name}
 
-    if(!mongoose.Types.ObjectId.isValid(id)){
-        return res.status(404).json({success: false, message: "Invalid book ID "});
+    if(!await Book.findOne(query)){
+        return res.status(404).json({ success: false, message: "Invalid book name! "});
     }
 
     try {
-        await Book.findByIdAndDelete(id);
-        res.status(200).json({success: true, message: "Book deleted"});
-    } catch (error) {
-        res.status(500).json({success: false, message: "Server error"});
+        await Book.deleteOne(query)
+        res.status(200).json({ success: true, message: "Book deleted successfuly"})
+    }catch(error) {
+        res.status(500).json({ success: false, message: "Server error"})
     }
 };
 
