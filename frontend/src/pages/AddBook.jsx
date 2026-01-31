@@ -44,7 +44,8 @@ const AddBook = () => {
             <main>
                 <section class="add-book">
                     <section class="add-name-details">
-                        <label>Please add your book name:</label><br/>
+                        <label><span class="required-symbol">*</span> 
+                            1.Please add your book name:</label><br/>
                         <input
                             placeholder='Book Name' 
                             name='name' 
@@ -54,7 +55,8 @@ const AddBook = () => {
                         <br/><br/>
                     </section>
                     <section class="add-page-details">
-                        <label>Number of pages:</label><br/>
+                        <label><span class="required-symbol">*</span> 
+                            2. Number of pages:</label>
                         <input
                             placeholder='num. pages' 
                             name='pages'
@@ -65,7 +67,8 @@ const AddBook = () => {
                         <br/><br/>
                     </section>
                     <section class="add-url-details">
-                        <label>Image link:</label><br/>
+                        <label><span class="required-symbol">*</span> 
+                            3. Image link:</label><br/>
                         <input
                             placeholder='link' 
                             name='image' 
@@ -74,9 +77,7 @@ const AddBook = () => {
                         />
                         <br/><br/>
                     </section>
-                    <button
-                        onClick={handleAddBook}
-                    >
+                    <button onClick={handleAddBook}>
                         Submit
                     </button>
                 </section>
