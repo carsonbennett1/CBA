@@ -4,6 +4,17 @@ import { toast } from "react-toastify"
 import "../styles/AddBook.css"
 
 const UpdateBook = () => {
+    const [bookToUpdate, setBookToUpdate ] = useState({
+        name:"",
+        pages:"",
+        image:"",
+    });
+
+    const {updateBook} = useBookArchive();
+
+    const handleUpdateBook = async() => {
+
+    }
 
     return (
         <>
@@ -23,8 +34,8 @@ const UpdateBook = () => {
                         <input
                             placeholder='Book Name' 
                             name='name' 
-                            // value={newBook.name}
-                            // onChange={(e) => setNewBook({ ...newBook, name: e.target.value})} 
+                            value={bookToUpdate.name}
+                            onChange={(e) => setBookToUpdate({ ...bookToUpdate, name: e.target.value})} 
                         />
                         <br/><br/>
                     </section>
@@ -34,8 +45,8 @@ const UpdateBook = () => {
                             placeholder='num. pages' 
                             name='pages'
                             type='number'
-                            // value={newBook.pages}
-                            // onChange={(e) => setNewBook({ ...newBook, pages: e.target.value})} 
+                            value={bookToUpdate.pages}
+                            onChange={(e) => setBookToUpdate({ ...bookToUpdate, pages: e.target.value})} 
                         />
                         <br/><br/>
                     </section>
@@ -44,13 +55,12 @@ const UpdateBook = () => {
                         <input
                             placeholder='link' 
                             name='image' 
-                            // value={newBook.image}
-                            // onChange={(e) => setNewBook({ ...newBook, image: e.target.value})} 
+                            value={bookToUpdate.image}
+                            onChange={(e) => setBookToUpdate({ ...bookToUpdate, image: e.target.value})} 
                         />
                         <br/><br/>
                     </section>
-                    {/* <button onClick={handleAddBook}> */}
-                    <button>
+                    <button onClick={handleUpdateBook}>
                         Submit
                     </button>
                 </section>
