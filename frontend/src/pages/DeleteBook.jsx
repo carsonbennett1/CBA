@@ -54,7 +54,9 @@ const DeleteBook = () => {
             </header>
             <main>
                 <section class='delete-book'>
-                    <label>Please add the name of the book you want to delete</label><br/>
+                    <label><span class="required-symbol">* </span> 
+                        Name of Book to be deleted:
+                    </label><br/>
                     <input
                         placeholder="Book Name"
                         name="name"
