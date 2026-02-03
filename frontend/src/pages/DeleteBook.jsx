@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { toast } from "react-toastify"
 import "../styles/DeleteBook.css"
 import { useBookArchive } from '../archive/book';
+import Header from '../components/header/Header';
 
 const DeleteBook = () => {
     const [bookToDelete, setBookToDelete] = useState({
@@ -44,14 +45,7 @@ const DeleteBook = () => {
 
     return (
         <>
-            <header>
-                <h1><u>Welcome to Carson's Book Archive</u></h1>
-                <nav class="main-nav">
-                    <a href="/">Home</a>
-                    <a href='/add'>Add Book</a>
-                    <a href='/delete'>Delete Book</a>
-                </nav>
-            </header>
+            <Header />
             <main>
                 <section class='delete-book'>
                     <label><span class="required-symbol">* </span> 

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useBookArchive } from '../archive/book'
 import { toast } from "react-toastify"
 import "../styles/AddBook.css"
+import Header from '../components/header/Header'
 
 const AddBook = () => {
     const [newBook, setNewBook ] = useState({
@@ -45,15 +46,7 @@ const AddBook = () => {
 
     return(
         <>
-            <header>
-                <h1><u>Welcome to Carson's Book Archive</u></h1>
-                <nav class="main-nav">
-                    <a href="/">Home</a>
-                    <a href='/add'>Add Book</a>
-                    <a href='/delete'>Delete Book</a>
-                    <a href='/update'>Update Book</a>
-                </nav>
-            </header>
+            <Header />
             <main>
                 <section class="add-book">
                     <section class="add-name-details">

@@ -90,9 +90,9 @@ const UpdateBook = () => {
                         />
                         <br/><br/>
                     </section>
-                    <button onClick={handleUpdateBook}>
+                    {/* <button onClick={handleUpdateBook}>
                         Submit
-                    </button>
+                    </button> */}
                 </section>
             </main>
         </>

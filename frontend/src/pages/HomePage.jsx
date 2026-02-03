@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import '../styles/HomePage.css'
 import { useBookArchive } from '../archive/book'
 import BookCard from './BookCard';
+import Header from '../components/header/Header';
 
 const Home = () => {
     const {fetchBooks, books} = useBookArchive();
@@ -13,14 +14,7 @@ const Home = () => {
 
     return (
         <>  
-            <header>
-                <h1><u>Welcome to Carson's Book Archive</u></h1>
-                <nav class="main-nav">
-                    <a href='/add'>Add Book</a>
-                    <a href='/delete'>Delete Book</a>
-                    <a href='/update'>Update Book</a>
-                </nav>
-            </header>
+            <Header />
             <main>
                 <section class="book-script">
                     <script>
