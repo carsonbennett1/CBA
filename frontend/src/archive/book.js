@@ -2,7 +2,22 @@ import { create } from "zustand"
 
 export const useBookArchive = create((set) => ({
     books: [],
-    setBooks: (books) => set({books}),
+    updateBook: async (updatedBookAttributes) => {
+        if(!updatedBookAttributes.name){
+            return {success:false, message:"Please fill in name field"}
+        }
+
+        const res = await fetch(`/api/books/${updatedBookAttributes}`, {
+            method: "PUT",
+            headers:{
+                "Content-Type":"application/json",
+            },
+            body:JSON.stringify(updatedBookAttributes),
+        });
+        const data = await res.json();
+        set((state) => ({books:{...state.books, data}}));
+        return { success:true, message:"Book updated successfuly"}
+    },
     addBook: async (newBook) => {
         if(!newBook.name || !newBook.pages || !newBook.image){
             return {success:false, message:"Please fill in all fields"}
@@ -16,7 +31,7 @@ export const useBookArchive = create((set) => ({
         });
         const data = await res.json();
         set((state) => ({books:{...state.books, data}}));
-        return {success:true, message:"Product created successfuly"};
+        return {success:true, message:"Book created successfuly"};
     },
     fetchBooks: async () => {
         const res = await fetch("/api/books");

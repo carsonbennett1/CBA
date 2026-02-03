@@ -13,7 +13,34 @@ const UpdateBook = () => {
     const {updateBook} = useBookArchive();
 
     const handleUpdateBook = async() => {
-
+        if(!bookToUpdate.name){
+            const notify = () => {
+                toast.error("You MUST input book name.", {
+                    autoClose: 3000,
+                });
+            }
+            notify();
+        
+        }else{
+            const {success} = await updateBook(bookToUpdate.name)
+            if(!success){
+                const notify = () => {
+                    toast.error("Unsuccessful update book attempt", {
+                        autoClose: 3000,
+                    });
+                }
+                notify();
+            }
+            
+            if(success){
+                const accept = () => {
+                    toast.success("Successfuly updated book in archive.", {
+                        autoClose: 3000,
+                    })
+                }
+                accept();
+            }
+        }
     }
 
     return (
@@ -40,7 +67,7 @@ const UpdateBook = () => {
                         <br/><br/>
                     </section>
                     <section class="add-page-details">
-                        <label>2. Number of pages:</label>
+                        <label>2.Number of pages:</label>
                         <input
                             placeholder='num. pages' 
                             name='pages'
@@ -51,7 +78,7 @@ const UpdateBook = () => {
                         <br/><br/>
                     </section>
                     <section class="add-url-details">
-                        <label>3. Image link:</label><br/>
+                        <label>3.Image link:</label><br/>
                         <input
                             placeholder='link' 
                             name='image' 

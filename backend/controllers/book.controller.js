@@ -23,7 +23,7 @@ export const createBook = async (req, res) => {
     try {
         await newBook.save();
         res.status(201).json({ success: true, date: newBook });
-    }catch (errpr){
+    }catch (error){
         console.error("Error in created product:", error.message);
         res.status(500).json({success: false, message: "Server error "});
     }
@@ -31,7 +31,7 @@ export const createBook = async (req, res) => {
 
 export const deleteBook = async (req, res) => {
     const { name } = req.params;
-    let query = { name: name}
+    let query = { name: name }
 
     if(!await Book.findOne(query)){
         return res.status(404).json({ success: false, message: "Invalid book name! "});
@@ -46,15 +46,16 @@ export const deleteBook = async (req, res) => {
 };
 
 export const updateBook = async (req, res) => {
-    const { id } = req.params;
+    const { name } = req.params;
+    let query = { name: name }
     const book = req.body;
 
-    if(!mongoose.Types.ObjectId.isValid(id)){
-        return res.status(404).json({success: false, message: "Invalid book ID "});
+    if(!await Book.findOne(query)){
+        return res.status(404).json({ success: false, message: "Invalid book name! "});
     }
 
     try {
-        const updatedBook = await Book.findByIdAndUpdate(id, book, {new:true});
+        const updatedBook = await Book.findOneAndUpdate(query, book, {new:true});
         res.status(200).json({success: true, data: updatedBook});
     } catch (error) {
         res.status(500).json({success: false, message:"Server Error" });
