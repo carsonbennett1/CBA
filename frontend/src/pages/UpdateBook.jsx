@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useBookArchive } from '../archive/book'
 import { toast } from "react-toastify"
-import "../styles/AddBook.css"
+import "../styles/InputStyle.css"
 
 const UpdateBook = () => {
     const [bookToUpdate, setBookToUpdate ] = useState({
@@ -58,8 +58,8 @@ const UpdateBook = () => {
                 <section class="under-construction">
                     <h3>Page Under Construction - NO FUNCTIONALITY</h3>
                 </section>
-                <section class="add-book">
-                    <section class="add-name-details">
+                <section class="input-section">
+                    <section class="name-input-section">
                         <label>1.Please add your book name:</label><br/>
                         <input
                             placeholder='Book Name' 
@@ -69,7 +69,7 @@ const UpdateBook = () => {
                         />
                         <br/><br/>
                     </section>
-                    <section class="add-page-details">
+                    <section class="page-input-section">
                         <label>2.Number of pages:</label>
                         <input
                             placeholder='num. pages' 
@@ -80,7 +80,7 @@ const UpdateBook = () => {
                         />
                         <br/><br/>
                     </section>
-                    <section class="add-url-details">
+                    <section class="url-input-section">
                         <label>3.Image link:</label><br/>
                         <input
                             placeholder='link' 

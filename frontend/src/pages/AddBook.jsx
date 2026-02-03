@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useBookArchive } from '../archive/book'
 import { toast } from "react-toastify"
-import "../styles/AddBook.css"
+import "../styles/InputStyle.css"
 import Header from '../components/header/Header'
 
 const AddBook = () => {
@@ -48,8 +48,8 @@ const AddBook = () => {
         <>
             <Header />
             <main>
-                <section class="add-book">
-                    <section class="add-name-details">
+                <section class="input-section">
+                    <section class="name-input-section">
                         <label><span class="required-symbol">*</span> 
                             1.Please add your book name:</label><br/>
                         <input
@@ -60,7 +60,7 @@ const AddBook = () => {
                         />
                         <br/><br/>
                     </section>
-                    <section class="add-page-details">
+                    <section class="page-input-section">
                         <label><span class="required-symbol">*</span> 
                             2. Number of pages:</label>
                         <input
@@ -72,7 +72,7 @@ const AddBook = () => {
                         />
                         <br/><br/>
                     </section>
-                    <section class="add-url-details">
+                    <section class="url-input-section">
                         <label><span class="required-symbol">*</span> 
                             3. Image link:</label><br/>
                         <input
