@@ -38,3 +38,14 @@ button {
     width: 7em;
     height: 3em;
 }
+
+.under-construction {
+    border: solid 2px black;
+    margin: 1em;
+    background-image: url(../images/striped.webp);
+}
+
+.under-construction h3 {
+    text-align: center;
+    color: darkgray;
+}

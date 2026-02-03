@@ -55,6 +55,9 @@ const UpdateBook = () => {
                 </nav>
             </header>
             <main>
+                <section class="under-construction">
+                    <h3>Page Under Construction - NO FUNCTIONALITY</h3>
+                </section>
                 <section class="add-book">
                     <section class="add-name-details">
                         <label>1.Please add your book name:</label><br/>
