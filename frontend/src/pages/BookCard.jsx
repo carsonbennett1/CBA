@@ -1,4 +1,4 @@
-import '../styles/HomePage.css'
+import '../styles/BookCard.css'
 
 const BookCard = ({book}) => {
     return (
