@@ -6,6 +6,7 @@ import Home from './pages/HomePage'
 import { ToastContainer } from 'react-toastify'
 import DeleteBook from './pages/DeleteBook'
 import UpdateBook from './pages/UpdateBook.jsx'
+import Demo from './pages/Demo.jsx'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path='/add' element={<AddBook />} />
             <Route path='/delete' element={<DeleteBook />} />
             <Route path='/update' element={<UpdateBook />} />
+            <Route path='/playground' element={<Demo />} />
           </Routes>
         </nav>
         <div>

@@ -10,6 +10,7 @@ const Header = () => {
                     <a href='/add'>Add Book</a>
                     <a href='/delete'>Delete Book</a>
                     <a href='/update'>Update Book</a>
+                    <a href='/playground'>Playground</a>
                 </nav>
             </header>
         </>
