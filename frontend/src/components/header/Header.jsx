@@ -1,10 +1,13 @@
 import { Route, Routes } from "react-router-dom";
+import { useState } from "react";
 import "../../styles/Header.css"
 import Register from "../../pages/Register";
+import "../../styles/Dropdown.css"
 import Dropdown from "./Dropdown";
 
 
 const Header = () => {
+    const [dropdownStatus, setDropdownStatus] = useState(false);
 
     return (
         <>
@@ -16,7 +19,12 @@ const Header = () => {
                     <a href='/delete'>Delete Book</a>
                     <a href='/update'>Update Book</a>
                     <a href='/playground'>Playground</a>
-                    <Dropdown/>
+                    <button onClick={() => setDropdownStatus((prev) => !prev)} className="dropdown-button">
+                        Profile
+                    </button>
+                    {
+                        dropdownStatus && <Dropdown/>
+                    }
                 </nav>
             </header>
         </>

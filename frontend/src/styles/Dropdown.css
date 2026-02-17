@@ -1,13 +1,18 @@
-.dropdown-submenu {
-    list-style: none;
-    text-align: start;
+.dropdown-body {
+    position: absolute;
+    right: 24.5%;
+    top: 15.3%;
+    background-color: white;
+    width: 130px;
+    border-radius: 10px;
 }
 
-/* .dropdown-submenu.clicked {
-    display: none;
-} */
+.dropdown-body li {
+    list-style: none;
+    padding: 5px;
+    cursor: pointer;
+}
 
-.dropdown-submenu li {
-    background-color: white;
+.dropdown-button {
     cursor: pointer;
 }
