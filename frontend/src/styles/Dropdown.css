@@ -1,0 +1,13 @@
+.dropdown-submenu {
+    list-style: none;
+    text-align: start;
+}
+
+/* .dropdown-submenu.clicked {
+    display: none;
+} */
+
+.dropdown-submenu li {
+    background-color: white;
+    cursor: pointer;
+}

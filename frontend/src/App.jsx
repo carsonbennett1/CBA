@@ -8,6 +8,7 @@ import DeleteBook from './pages/DeleteBook'
 import UpdateBook from './pages/UpdateBook.jsx'
 import Demo from './pages/Demo.jsx'
 import Register from './pages/Register.jsx'
+import SignIn from './pages/SignIn.jsx'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path='/update' element={<UpdateBook />} />
             <Route path='/playground' element={<Demo />} />
             <Route path='/register' element={<Register />} />
+            <Route path='signIn' element={<SignIn />}/>
           </Routes>
         </nav>
         <div>

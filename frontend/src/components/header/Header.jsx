@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "../../styles/Header.css"
 import Register from "../../pages/Register";
+import Dropdown from "./Dropdown";
 
 
 const Header = () => {
@@ -15,6 +16,7 @@ const Header = () => {
                     <a href='/delete'>Delete Book</a>
                     <a href='/update'>Update Book</a>
                     <a href='/playground'>Playground</a>
+                    <Dropdown/>
                 </nav>
             </header>
         </>
