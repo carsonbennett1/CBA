@@ -5,7 +5,7 @@ const Header = () => {
         <>
             <header>
                 <h1><u>Welcome to Carson's Book Archive</u></h1>
-                <nav class="main-nav">
+                <nav className="main-nav">
                     <a href='/'>Home</a>
                     <a href='/add'>Add Book</a>
                     <a href='/delete'>Delete Book</a>

@@ -20,6 +20,11 @@ function Demo() {
         setDifficulty(6);
     }
 
+    let items = []
+    for(let i = 0; i < difficulty; i++){
+        items.push(<p>{i}</p>);
+    }
+
     return(
         <>
             <Header />
@@ -37,6 +42,9 @@ function Demo() {
 
                 <h3>Current Difficulty Selected:</h3>
                 <p className="output">{difficulty}</p>
+
+                <p>{items}</p>
+                
             </div>
         </>
     )
