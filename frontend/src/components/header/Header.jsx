@@ -1,4 +1,8 @@
+import { Route, Routes } from "react-router-dom";
 import "../../styles/Header.css"
+import Register from "../../pages/Register";
+
+
 const Header = () => {
 
     return (

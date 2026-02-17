@@ -7,6 +7,7 @@ import { ToastContainer } from 'react-toastify'
 import DeleteBook from './pages/DeleteBook'
 import UpdateBook from './pages/UpdateBook.jsx'
 import Demo from './pages/Demo.jsx'
+import Register from './pages/Register.jsx'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path='/delete' element={<DeleteBook />} />
             <Route path='/update' element={<UpdateBook />} />
             <Route path='/playground' element={<Demo />} />
+            <Route path='/register' element={<Register />} />
           </Routes>
         </nav>
         <div>
