@@ -5,10 +5,19 @@ import "../styles/Demo.css"
 function Demo() {
 
     const [random, setRandom] = useState(0);
+    const [difficulty, setDifficulty] = useState(6);
 
     function getRandom(){
         let random = Math.floor(Math.random() * 256)
         setRandom(random)
+    }
+
+    const updateDifficultyEasy = () => {
+        setDifficulty(3);
+    }
+
+    const updateDifficultyHard = () => {
+        setDifficulty(6);
     }
 
     return(
@@ -17,14 +26,17 @@ function Demo() {
             <div id="main">
                 <h3>Difficulty Selector:</h3>
 
-                <button className="button-spacing">EASY</button>
-                <button className="button-spacing">HARD</button>
+                <button className="button-spacing" onClick={updateDifficultyEasy}>EASY</button>
+                <button className="button-spacing" onClick={updateDifficultyHard}>HARD</button>
 
                 <h3>Click Button Below to Generate Random Number</h3>
                 <button onClick={getRandom}>Random Button</button>
                 <p className="output">
                     {random}
                 </p>
+
+                <h3>Current Difficulty Selected:</h3>
+                <p className="output">{difficulty}</p>
             </div>
         </>
     )
