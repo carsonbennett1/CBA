@@ -1,18 +1,30 @@
 .dropdown-body {
     position: absolute;
-    right: 24.5%;
+    right: 27%;
     top: 15.3%;
     background-color: white;
-    width: 130px;
+    width: 100px;
     border-radius: 10px;
-}
-
-.dropdown-body li {
-    list-style: none;
-    padding: 5px;
-    cursor: pointer;
 }
 
 .dropdown-button {
     cursor: pointer;
+}
+
+.dropdown-body p {
+    cursor: pointer;
+}
+
+.dropdown-body a:link {
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown-body a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown-body a:hover {
+    background-color: white;
 }

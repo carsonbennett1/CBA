@@ -5,10 +5,12 @@ function Dropdown () {
     return(
         <>
             <div className="dropdown-body">
-                <ul className="dropdown-ul">
-                    <li>Register</li>
-                    <li>Sign In</li>
-                </ul>
+                <p>
+                    <a href="/register">Register</a>
+                </p>
+                <p>
+                    <a href="/signIn">Sign In</a>
+                </p>
             </div>
         </>
     )
