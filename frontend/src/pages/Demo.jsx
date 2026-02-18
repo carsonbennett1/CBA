@@ -6,9 +6,10 @@ function Demo() {
 
     const [random, setRandom] = useState(0);
     const [difficulty, setDifficulty] = useState(6);
+    const [selectedNode, setSelectedNode] = useState("none");
 
     function getRandom(){
-        let random = Math.floor(Math.random() * 256)
+        let random = Math.floor(Math.random() * 5)
         setRandom(random)
     }
 
@@ -20,10 +21,23 @@ function Demo() {
         setDifficulty(6);
     }
 
+    const nodeSelected = (item) => {
+        if(item === random){
+            console.log("Correct guess!");
+        }
+    }
+
     let items = []
     for(let i = 0; i < difficulty; i++){
-        items.push(<p>{i}</p>);
-    }
+        items.push(
+            <div
+                key={i}
+                className="node" 
+                onClick={() => nodeSelected(i)}>
+                {i}
+            </div>
+        );
+    };
 
     return(
         <>
