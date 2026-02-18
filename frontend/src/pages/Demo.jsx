@@ -3,11 +3,31 @@ import Header from "../components/header/Header";
 import "../styles/Demo.css"
 
 function Demo() {
-    let randomNum = Math.floor(Math.random() * 5)
-    let colors = ["red", "blue", "green", "purple"]
+    let randomNum = Math.floor(Math.random() * 5);
+
+    let generateRGB0 = Math.floor(Math.random() * 256);
+    let generateRGB1 = Math.floor(Math.random() * 256);
+    let generateRGB2 = Math.floor(Math.random() * 256);
+
+    //TODO:
+    // PRINT out the generated RGB combo
+    // Have generated rbg correct guess be registered
+    // LOOP through colors and change their array positions
+
+    let RGB = `rgb(${generateRGB0}, ${generateRGB1}, ${generateRGB2})`
+
+    let colors = []
 
     const [random, setRandom] = useState(randomNum);
     const [difficulty, setDifficulty] = useState(6);
+
+    for(let j = 0; j < difficulty; j++){
+        generateRGB0 = Math.floor(Math.random() * 256);
+        generateRGB1 = Math.floor(Math.random() * 256);
+        generateRGB2 = Math.floor(Math.random() * 256);
+        RGB = `rgb(${generateRGB0}, ${generateRGB1}, ${generateRGB2})`
+        colors.push(RGB);
+    }
 
     const updateDifficultyEasy = () => {
         setDifficulty(3);
@@ -33,7 +53,9 @@ function Demo() {
             <div
                 key={i}
                 className="node" 
-                onClick={() => nodeSelected(i)}>
+                onClick={() => nodeSelected(i)}
+                style={{backgroundColor: colors[i]}}
+                >
                 {i}
             </div>
         );
