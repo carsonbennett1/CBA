@@ -3,15 +3,15 @@ import Header from "../components/header/Header";
 import "../styles/Demo.css"
 
 function Demo() {
+    //TODO:
+    // PRINT out the generated RGB combo
+    // Have generated rbg correct guess be registered
+
     let randomNum = Math.floor(Math.random() * 5);
 
     let generateRGB0 = Math.floor(Math.random() * 256);
     let generateRGB1 = Math.floor(Math.random() * 256);
     let generateRGB2 = Math.floor(Math.random() * 256);
-
-    //TODO:
-    // PRINT out the generated RGB combo
-    // Have generated rbg correct guess be registered
 
     let RGB = `rgb(${generateRGB0}, ${generateRGB1}, ${generateRGB2})`
 
@@ -20,28 +20,34 @@ function Demo() {
     const [random, setRandom] = useState(randomNum);
     const [difficulty, setDifficulty] = useState(6);
 
-    for(let j = 0; j < difficulty; j++){
-        generateRGB0 = Math.floor(Math.random() * 256);
-        generateRGB1 = Math.floor(Math.random() * 256);
-        generateRGB2 = Math.floor(Math.random() * 256);
-        RGB = `rgb(${generateRGB0}, ${generateRGB1}, ${generateRGB2})`
-        colors.push(RGB);
+    function generatingColors() {
+        for(let j = 0; j < difficulty; j++){
+            generateRGB0 = Math.floor(Math.random() * 256);
+            generateRGB1 = Math.floor(Math.random() * 256);
+            generateRGB2 = Math.floor(Math.random() * 256);
+            RGB = `rgb(${generateRGB0}, ${generateRGB1}, ${generateRGB2})`
+            colors.push(RGB);
+        }
     }
+    generatingColors();
 
     let itemToGuess = colors[random];
+    console.log(itemToGuess, random)
 
     const updateDifficultyEasy = () => {
         setDifficulty(3);
         setRandom(Math.floor(Math.random() * difficulty))
+        generatingColors();
     }
 
     const updateDifficultyHard = () => {
         setDifficulty(6);
         setRandom(Math.floor(Math.random() * difficulty))
+        generatingColors();
     }
 
     const nodeSelected = (item) => {
-        if(item === itemToGuess){
+        if(item === random){
             alert("Correct guess!");
             randomNum = Math.floor(Math.random() * difficulty)
             setRandom(randomNum)
@@ -68,7 +74,7 @@ function Demo() {
             <div id="main">
                 <h3>Difficulty Selector:</h3>
                 
-                <h4>Item to Guess</h4>
+                <h4>Item to Guess:</h4>
                 <p>{itemToGuess}</p>
 
                 <button className="button-spacing" onClick={updateDifficultyEasy}>EASY</button>
