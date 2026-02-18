@@ -12,7 +12,6 @@ function Demo() {
     //TODO:
     // PRINT out the generated RGB combo
     // Have generated rbg correct guess be registered
-    // LOOP through colors and change their array positions
 
     let RGB = `rgb(${generateRGB0}, ${generateRGB1}, ${generateRGB2})`
 
@@ -29,6 +28,8 @@ function Demo() {
         colors.push(RGB);
     }
 
+    let itemToGuess = colors[random];
+
     const updateDifficultyEasy = () => {
         setDifficulty(3);
         setRandom(Math.floor(Math.random() * difficulty))
@@ -40,7 +41,7 @@ function Demo() {
     }
 
     const nodeSelected = (item) => {
-        if(item === random){
+        if(item === itemToGuess){
             alert("Correct guess!");
             randomNum = Math.floor(Math.random() * difficulty)
             setRandom(randomNum)
@@ -66,6 +67,9 @@ function Demo() {
             <Header />
             <div id="main">
                 <h3>Difficulty Selector:</h3>
+                
+                <h4>Item to Guess</h4>
+                <p>{itemToGuess}</p>
 
                 <button className="button-spacing" onClick={updateDifficultyEasy}>EASY</button>
                 <button className="button-spacing" onClick={updateDifficultyHard}>HARD</button>
@@ -76,7 +80,6 @@ function Demo() {
             </div>
         </>
     )
-
 }
 
 export default Demo;
