@@ -3,27 +3,27 @@ import Header from "../components/header/Header";
 import "../styles/Demo.css"
 
 function Demo() {
+    let randomNum = Math.floor(Math.random() * 5)
+    let colors = ["red", "blue", "green", "purple"]
 
-    const [random, setRandom] = useState(0);
+    const [random, setRandom] = useState(randomNum);
     const [difficulty, setDifficulty] = useState(6);
-    const [selectedNode, setSelectedNode] = useState("none");
-
-    function getRandom(){
-        let random = Math.floor(Math.random() * 5)
-        setRandom(random)
-    }
 
     const updateDifficultyEasy = () => {
         setDifficulty(3);
+        setRandom(Math.floor(Math.random() * difficulty))
     }
 
     const updateDifficultyHard = () => {
         setDifficulty(6);
+        setRandom(Math.floor(Math.random() * difficulty))
     }
 
     const nodeSelected = (item) => {
         if(item === random){
-            console.log("Correct guess!");
+            alert("Correct guess!");
+            randomNum = Math.floor(Math.random() * difficulty)
+            setRandom(randomNum)
         }
     }
 
@@ -48,19 +48,9 @@ function Demo() {
                 <button className="button-spacing" onClick={updateDifficultyEasy}>EASY</button>
                 <button className="button-spacing" onClick={updateDifficultyHard}>HARD</button>
 
-                <h3>Click Button Below to Generate Random Number</h3>
-                <button onClick={getRandom}>Random Button</button>
-                <p className="output">
-                    {random}
-                </p>
-
-                <h3>Current Difficulty Selected:</h3>
-                <p className="output">{difficulty}</p>
-
                 <div className="difficulty-container">
                     {items}
                 </div>
-                
             </div>
         </>
     )
