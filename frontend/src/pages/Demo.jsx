@@ -43,7 +43,9 @@ function Demo() {
                 <h3>Current Difficulty Selected:</h3>
                 <p className="output">{difficulty}</p>
 
-                <p>{items}</p>
+                <div className="difficulty-container">
+                    {items}
+                </div>
                 
             </div>
         </>
