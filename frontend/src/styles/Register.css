@@ -1,0 +1,11 @@
+form {
+    text-align: center;
+}
+
+form label {
+    margin: 0 10px 0 10px;
+}
+
+.form {
+    margin: 10px 0 10px 0;
+}
