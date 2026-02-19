@@ -1,23 +1,15 @@
 import { useState } from "react";
-import "../styles/Register.css"
-import axios from 'axios'
+import "../styles/Register.css";
 
 function Register() {
     const [name, setName] = useState();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
 
-    const handleSubmit= (e) => {
-        e.preventDefault();
-        axios.post('', {name, email, password})
-        .then(result => console.log(result))
-        .catch(err = console.log(err))
-    }
-
     return(
         <>
             <h1>Register Page</h1>
-            <form onSubmit={handleSubmit}>
+            <form>
                 <div className="form">
                     <label htmlFor="email">
                         <strong>Name:</strong>
